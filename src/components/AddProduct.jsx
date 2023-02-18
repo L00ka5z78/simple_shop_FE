@@ -6,8 +6,23 @@ export const AddProduct = () => {
   const [category, setCategory] = useState('');
   const [company, setCompany] = useState('');
 
-  const addProduct = () => {
-    console.warn(name, price, category, company);
+  const addProduct = async () => {
+    // console.warn(name, price, category, company);
+
+    const userId = JSON.parse(localStorage.getItem('user'))._id;
+    /**localstorage gives stringified result. therefore we have to parse it into object and get user id **/
+    console.warn(userId);
+
+    let result = await fetch('http://localhost:5000/add-product', {
+      //LET because we change variable
+      method: 'POST',
+      body: JSON.stringify({ name, price, category, company, userId }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    result = await result.json();
+    console.warn(result);
   };
 
   return (
