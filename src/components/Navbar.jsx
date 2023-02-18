@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Logo from '../img/ear.png';
 
 export const Navbar = () => {
   const auth = localStorage.getItem('user');
@@ -14,6 +15,7 @@ export const Navbar = () => {
 
   return (
     <div>
+      <img src={Logo} alt="logo" className="logo" />
       {auth ? (
         <ul className="nav-ul">
           <li>
@@ -30,7 +32,7 @@ export const Navbar = () => {
           </li>
           <li>
             <Link onClick={logout} to="/signup">
-              Logout
+              Logout ({JSON.parse(auth).name})
             </Link>
           </li>
         </ul>
@@ -49,4 +51,6 @@ export const Navbar = () => {
   );
 };
 
-//auth ---if user is in localstorage show logout and products links otherwise signup or register
+/*auth ---if user is in localstorage show logout and products links otherwise signup or register
+data in localstorage is string so we need to parse it ===  {JSON.parse(auth).name}
+*/
