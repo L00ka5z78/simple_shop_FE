@@ -5,9 +5,14 @@ export const AddProduct = () => {
   const [price, setPrice] = useState('');
   const [category, setCategory] = useState('');
   const [company, setCompany] = useState('');
+  const [error, setError] = useState(false);
 
   const addProduct = async () => {
     // console.warn(name, price, category, company);
+    if (!name || !price || !category || !company) {
+      setError(true);
+      return false;
+    }
 
     const userId = JSON.parse(localStorage.getItem('user'))._id;
     /**localstorage gives stringified result. therefore we have to parse it into object and get user id **/
@@ -35,6 +40,9 @@ export const AddProduct = () => {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
+      {error && !name && (
+        <span className="invalid-input">insert valid name...</span>
+      )}
       <input
         className="input-box"
         type="text"
@@ -42,6 +50,10 @@ export const AddProduct = () => {
         value={price}
         onChange={(e) => setPrice(e.target.value)}
       />
+      {error && !price && (
+        <span className="invalid-input">insert valid price...</span>
+      )}
+
       <input
         className="input-box"
         type="text"
@@ -49,6 +61,9 @@ export const AddProduct = () => {
         value={category}
         onChange={(e) => setCategory(e.target.value)}
       />
+      {error && !category && (
+        <span className="invalid-input">insert valid category...</span>
+      )}
       <input
         className="input-box"
         type="text"
@@ -56,9 +71,16 @@ export const AddProduct = () => {
         value={company}
         onChange={(e) => setCompany(e.target.value)}
       />
+      {error && !company && (
+        <span className="invalid-input">insert valid company...</span>
+      )}
       <button onClick={addProduct} className="app-button">
         Add product
       </button>
     </div>
   );
 };
+
+/**       {error && !name && <span className="invalid-input">Enter valid name...</span>}
+ *  throw error if theres no name dispaly error message == span
+ */
