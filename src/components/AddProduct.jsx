@@ -83,4 +83,7 @@ export const AddProduct = () => {
 
 /**       {error && !name && <span className="invalid-input">Enter valid name...</span>}
  *  throw error if theres no name dispaly error message == span
+ * 
+ * @todoADD ability REFRESHING FORM AFTER PRODUCT IS ADDED************* 
+
  */
