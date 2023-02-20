@@ -111,6 +111,13 @@
   border: 1px solid skyblue;
   padding: 5px;
 }
+.search-box {
+  width: 300px;
+  margin: 20px;
+  height: 35px;
+  padding-left: 30px;
+  border: 1px solid skyblue;
+}
 
 @keyframes App-logo-spin {
   from {
