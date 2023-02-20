@@ -34,8 +34,9 @@ export const SignUp = () => {
     console.warn(result);
     localStorage.setItem(
       'user',
-      JSON.stringify(result)
+      JSON.stringify(result.result)
     ); /**set into localstorage stringified result. user is a key we use in other components if needed **/
+    localStorage.setItem('token', JSON.stringify(result.auth));
 
     navigate('/');
   };

@@ -8,7 +8,11 @@ export const ProductsList = () => {
     getProducts();
   }, []);
   const getProducts = async () => {
-    let result = await fetch('http://localhost:5000/products'); //get method by default
+    let result = await fetch('http://localhost:5000/products', {
+      headers: {
+        authorization: `bearer  ${JSON.parse(localStorage.getItem('token'))}`,
+      },
+    }); //get method by default
     result = await result.json();
     setProducts(result);
     // setProducts(await result.json());    //shorter version without changing variable
@@ -18,6 +22,9 @@ export const ProductsList = () => {
     console.log(id);
     let result = await fetch(`http://localhost:5000/products/${id}`, {
       method: 'DELETE',
+      headers: {
+        authorization: `bearer  ${JSON.parse(localStorage.getItem('token'))}`,
+      },
     });
     result = await result.json();
     if (result) {
@@ -28,7 +35,11 @@ export const ProductsList = () => {
   const handleSearch = async (event) => {
     const key = event.target.value; //gets data written in input field
     if (key) {
-      let result = await fetch(`http://localhost:5000/search/${key}`);
+      let result = await fetch(`http://localhost:5000/search/${key}`, {
+        headers: {
+          authorization: `bearer  ${JSON.parse(localStorage.getItem('token'))}`,
+        },
+      });
       result = await result.json();
       if (result) {
         setProducts(result); // if result is true update initial state and display

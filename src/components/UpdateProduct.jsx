@@ -15,7 +15,11 @@ export const UpdateProduct = () => {
 
   const getProductDetails = async () => {
     console.log(params);
-    let result = await fetch(`http://localhost:5000/products/${params.id}`);
+    let result = await fetch(`http://localhost:5000/products/${params.id}`, {
+      headers: {
+        authorization: `bearer  ${JSON.parse(localStorage.getItem('token'))}`,
+      },
+    });
     result = await result.json();
     console.log(result); //gets whole object with products data, so you can use it and pre-fill form with current data
     setName(result.name);
@@ -32,6 +36,7 @@ export const UpdateProduct = () => {
       body: JSON.stringify({ name, price, category, company }),
       headers: {
         'Content-Type': 'Application/json',
+        authorization: `bearer  ${JSON.parse(localStorage.getItem('token'))}`,
       },
     });
     result = await result.json();

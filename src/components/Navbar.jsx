@@ -28,7 +28,7 @@ export const Navbar = () => {
             <Link to="/update">Update PRODUCT</Link>
           </li>
           <li>
-            <Link to="/profile">Profile</Link>
+            <Link to="/profile">Profile</Link>{' '}
           </li>
           <li>
             <Link onClick={logout} to="/signup">
@@ -38,7 +38,6 @@ export const Navbar = () => {
         </ul>
       ) : (
         <ul className="nav-ul nav-right">
-          {' '}
           <li>
             <Link to="/signup">Signup</Link>
           </li>
