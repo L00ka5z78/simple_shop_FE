@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+Hey there! 
+This is Frontend to simple shop/dashboard application.
+It is a project I wrote to test my skills in actually connecting backend and fronted. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplication has CRUD operations, where one can add, remove, update, list products.
+Also there is a registration form where you have to give some required data. Login form is also built.
 
-## Available Scripts
+Tech stack used to build this project: JavaScript, ReactJs, CSS, MongoDB Compass, Express, NodeJS.
 
-In the project directory, you can run:
+To run this app you should clone this repository:
 
-### `npm start`
+BACKEND
+git clone https://github.com/L00ka5z78/simple_shop_BE
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+FRONTEND
+git clone https://github.com/L00ka5z78/simple_shop_FE
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Install all dependencies. To do that, run npm install in PROJECTS DIRECTORY.
 
-### `npm test`
+Install mongoDB Compass on your device and remember to have mongo running in terminal. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Sometimes there are problems to run mongo, therefor i will give few hints.
+After installing on your device try to run it from terminal in your project.
+If it will not run, create a script in package.json file like this: "start-mongo": "cd /d **your path to /MongoDb/bin/ && mongod.exe **",
 
-### `npm run build`
+and run the database in the background in your backend. 
+Then run the project in the backend: npm run start. If everything went right, you will see messages that server is running and database is connected.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Things I am happy with:
+1. I like the simple structure in App.js file
+2. This is the first time when I added login, register features with authentication, that actualy works.
+3. I think the usage of ternary is ok, to show links on the navbar depending on users status (logged in or not)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Things I should work with:
+1. Add validation. Theres some bugs like: adding empty form after clicking button. 
+2. Big ammount of code in one file. I mean ProductList.js. I will move some variables and url's  in separate files soon.
+3. The table(form), its actually not form, because im not good to work with forms. So, its another thing to upgrade
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Some screenshots:
 
-### `npm run eject`
+register and login form
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![regi](https://user-images.githubusercontent.com/110019733/223359370-27eb4ab1-de44-4ce0-9154-630f8c87581e.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![log](https://user-images.githubusercontent.com/110019733/223359476-79f4d2c8-c477-4196-84c7-321c2ac639e8.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+dashboard and it features:
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+![updt](https://user-images.githubusercontent.com/110019733/223359668-9da77006-08d9-42e8-8738-65382570300b.png)
+![productlist](https://user-images.githubusercontent.com/110019733/223359670-26a8fdf2-6065-4610-8246-a8d3a2e3fdea.png)
+![ser](https://user-images.githubusercontent.com/110019733/223359673-49d2d6cb-7433-4c15-a13a-fcc4b6717986.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Some thoughts: Git branching and pull requests doesnt exist.
+I was to focused or maybe afraid a bit not to loose data during merging and other git operations. 
+So, this is thing I need to be better at. And hopefully next projects will be better structured.
 
-### Analyzing the Bundle Size
+Another thing is, to migrate to typescript from JS, but Im not there yet.
+Learning typescript hard now, but it will take some time when I will be able to do it completly form scratch.
+My React skills are not the best ones. I see I can do better job with forms, and structuring states better.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+If you went through and read to the end, so maybe you want to check my github account and other
+more or less succesfull projects:
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://github.com/L00ka5z78
