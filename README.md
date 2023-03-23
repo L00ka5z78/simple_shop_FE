@@ -3,7 +3,8 @@
 It is a project I wrote to test my skills in actually connecting backend and fronted. 
 
 Aplication has CRUD operations, where one can add, remove, update, list products.
-Also there is a registration form where you have to give some required data. Login form is also built.
+Also there is a registration form where you have to give some required data. Login feature is also built.
+Application has search engine too.
 
 ### Tech stack used to build this project: JavaScript, ReactJs, CSS, MongoDB Compass, Express, NodeJS.
 
